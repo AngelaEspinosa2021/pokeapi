@@ -12,7 +12,7 @@ export class CharactersComponent implements OnInit {
   constructor(private service: CharacterService) { }
 
   ngOnInit(): void {
-    this.service.getDetails().subscribe((data:Character) => {
+    this.service.getDetails(2).subscribe((data:Character) => {
       console.log(data);
     })
   }
