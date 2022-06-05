@@ -16,8 +16,8 @@ export class CharacterService {
     }
 
 
-    getDatails(id:number){
-        return this.http.get<Character>(`${this.baseUrl}/${id})
+    getDetails(id:number){
+        return this.http.get<Character>(`${this.baseUrl}/${id}`)
     }
 
 }
