@@ -3,35 +3,29 @@
 
 <div class="row">
     <div class="col s12 m6 divItem">
-        <div *ngFor="let item of items">
-            <ul>
-                <li>
-                    <a href="">{{item.name}}</a>            
-                </li>
-            </ul>
+        <div *ngFor="let item of items; let indice=index">            
+            <button class="btn-pokemon" (click)="detailsPokemon(indice+1)">{{item.name}}</button>   
         </div>
-    </div>    
-    <div  class="col s12 m6 divTable">
-        <table>
-            <thead>
-                <tr>
-                    <th>IMAGEN</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>caracteristica 1</th>                    
-                </tr>
-                <tr>
-                    <th>caracteristica 2</th>                    
-                </tr>
-                <tr>
-                    <th>caracteristica 3</th>                    
-                </tr>
-            </tbody>
-        </table>
     </div>
+    <div  class="col s12 m6 divTable">
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th><img [src] ="pokemon.imagen" alt=""></th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>caracteristica 1</th>                    
+                    </tr>
+                    <tr>
+                        <th>caracteristica 2</th>                    
+                    </tr>
+                    <tr>
+                        <th>caracteristica 3</th>                    
+                    </tr>
+                </tbody>
+            </table>
+        </div>        
+    </div>    
 </div>
-
-
-

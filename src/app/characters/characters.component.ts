@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Result } from '../models/result';
 import { CharacterService } from '../characters.service';
 import {ListResult } from '../models/list-result';
-import { ActivatedRoute , Params} from '@angular/router';
+import { PokemonDetails } from '../models/pokemon-details';
+import { Pokemon } from '../models/pokemon';
+
 
 
 @Component({
@@ -13,24 +15,26 @@ import { ActivatedRoute , Params} from '@angular/router';
 export class CharactersComponent implements OnInit {
 
   items: Result[];
+  pokemon: Pokemon;
   
   constructor(private service: CharacterService) { 
                 this.items = new Array<Result>();
+                this.pokemon ={imagen: ''};                                      
               }
 
   ngOnInit(): void {
-    /* this.service.getDetails(2).subscribe((data:Character) => {
-      console.log(data);
-    }) */
-    /*this.route.params.subscribe((params: Params)=>{
-      console.log(params);
-      const id=params.id;
-    })*/
     this.service.getAllPokemon().subscribe((data:ListResult)=> {
-      this.items = data.results;
-      console.log(data);
-    })
+      this.items = data.results;      
+      //console.log(data);
+    });
+  }
 
+  detailsPokemon(id: number){
+    console.log(id);
+    this.service.getDetails(id).subscribe((data:any) => {
+      this.pokemon.imagen = data.sprites.front_default;
+      console.log(data);
+    });   
   }
 
 }
