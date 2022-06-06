@@ -1,7 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ListResult } from './models/list-result';
 
-import { Character } from "./models/character";
 
 @Injectable({
     providedIn:'root'
@@ -17,11 +17,11 @@ export class CharacterService {
 
     getAllPokemon()
     {
-        return this.http.get<Character>(this.baseUrl);
+        return this.http.get<ListResult>(this.baseUrl);
     }
 
     getDetails(id:number){
-        return this.http.get<Character>(`${this.baseUrl}/${id}`)
+        return this.http.get<ListResult>(`${this.baseUrl}/${id}`)
     }
 
 }

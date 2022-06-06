@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Character } from '../models/character';
+import { Result } from '../models/result';
 import { CharacterService } from '../characters.service';
-import { ListPokemon } from '../models/list-pokemon';
-import { MatTableDataSource} from '@angular/material/table';
+import {ListResult } from '../models/list-result';
+import { ActivatedRoute , Params} from '@angular/router';
 
 
 @Component({
@@ -12,16 +12,22 @@ import { MatTableDataSource} from '@angular/material/table';
 })
 export class CharactersComponent implements OnInit {
 
-  items: any=[];
+  items: Result[];
   
-  constructor(private service: CharacterService) { }
+  constructor(private service: CharacterService) { 
+                this.items = new Array<Result>();
+              }
 
   ngOnInit(): void {
     /* this.service.getDetails(2).subscribe((data:Character) => {
       console.log(data);
     }) */
-    this.service.getAllPokemon().subscribe((data:any)=> {
-      this.items = data.results
+    /*this.route.params.subscribe((params: Params)=>{
+      console.log(params);
+      const id=params.id;
+    })*/
+    this.service.getAllPokemon().subscribe((data:ListResult)=> {
+      this.items = data.results;
       console.log(data);
     })
 
