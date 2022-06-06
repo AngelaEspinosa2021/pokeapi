@@ -6,16 +6,19 @@ import { HeaderComponent } from './header/header.component';
 import { CharactersComponent } from './characters/characters.component';
 import { CharacterService } from './characters.service';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    CharactersComponent
+    CharactersComponent,
+    
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [CharacterService],
   bootstrap: [AppComponent]

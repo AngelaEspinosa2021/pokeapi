@@ -1,18 +1,10 @@
-<h2>Personas poke Api</h2>
+<h2>Escoge tu Pokemon</h2>
 
 
-<div>
-     <div>
-         <img [src]="" alt="">
-     </div>
-     <div>
-         <h3>
-
-         </h3>
-     </div>
-     <div>
-         <p>
-
-         </p>
-     </div>
+<div *ngFor="let item of items">
+    <ul>
+        <li>
+            {{item.name}}
+        </li>
+    </ul>
 </div>

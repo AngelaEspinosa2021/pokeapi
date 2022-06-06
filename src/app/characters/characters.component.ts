@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Character } from '../character';
+import { Character } from '../models/character';
 import { CharacterService } from '../characters.service';
+import { ListPokemon } from '../models/list-pokemon';
+import { MatTableDataSource} from '@angular/material/table';
+
 
 @Component({
   selector: 'app-characters',
@@ -9,12 +12,19 @@ import { CharacterService } from '../characters.service';
 })
 export class CharactersComponent implements OnInit {
 
+  items: any=[];
+  
   constructor(private service: CharacterService) { }
 
   ngOnInit(): void {
-    this.service.getDetails(2).subscribe((data:Character) => {
+    /* this.service.getDetails(2).subscribe((data:Character) => {
+      console.log(data);
+    }) */
+    this.service.getAllPokemon().subscribe((data:any)=> {
+      this.items = data.results
       console.log(data);
     })
+
   }
 
 }
