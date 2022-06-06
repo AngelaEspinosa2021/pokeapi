@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Result } from '../models/result';
 import { CharacterService } from '../characters.service';
 import {ListResult } from '../models/list-result';
-import { PokemonDetails } from '../models/pokemon-details';
 import { Pokemon } from '../models/pokemon';
 
 
@@ -17,7 +16,6 @@ export class CharactersComponent implements OnInit {
   items: Result[];
   pokemon: Pokemon;
 
-  
   constructor(private service: CharacterService) { 
                 this.items = new Array<Result>();
                 this.pokemon = {
@@ -41,9 +39,5 @@ export class CharactersComponent implements OnInit {
       console.log(this.pokemon);
     });   
   }
-
+  
 }
-function log(toString: any) {
-  throw new Error('Function not implemented.');
-}
-

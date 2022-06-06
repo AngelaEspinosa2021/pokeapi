@@ -7,7 +7,7 @@ import { CharactersComponent } from './characters/characters.component';
 import { CharacterService } from './characters.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CharactersDetailsComponent } from './characters-details/characters-details.component';
+
 
 
 @NgModule({
@@ -15,7 +15,6 @@ import { CharactersDetailsComponent } from './characters-details/characters-deta
     AppComponent,
     HeaderComponent,
     CharactersComponent,
-    CharactersDetailsComponent
   ],
   imports: [
     BrowserModule,
