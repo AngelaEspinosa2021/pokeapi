@@ -9,21 +9,15 @@
     </div>
     <div  class="col s12 m6 divTable">
         <div>
-            <table>
+            <table class="table">
                 <thead>
                     <tr>
-                        <th><img [src] ="pokemon.imagen" alt=""></th>
+                        <th><img [src] ="pokemon.image" alt=""></th>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th>caracteristica 1</th>                    
-                    </tr>
-                    <tr>
-                        <th>caracteristica 2</th>                    
-                    </tr>
-                    <tr>
-                        <th>caracteristica 3</th>                    
-                    </tr>
+                    <tr *ngFor="let item of pokemon.abilities">
+                        <th>ability: {{item.ability.name}}</th>
+                    </tr>                                      
                 </tbody>
             </table>
         </div>        

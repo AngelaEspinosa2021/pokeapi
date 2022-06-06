@@ -16,10 +16,14 @@ export class CharactersComponent implements OnInit {
 
   items: Result[];
   pokemon: Pokemon;
+
   
   constructor(private service: CharacterService) { 
                 this.items = new Array<Result>();
-                this.pokemon ={imagen: ''};                                      
+                this.pokemon = {
+                  image: '',
+                  abilities: []
+                }                             
               }
 
   ngOnInit(): void {
@@ -32,9 +36,14 @@ export class CharactersComponent implements OnInit {
   detailsPokemon(id: number){
     console.log(id);
     this.service.getDetails(id).subscribe((data:any) => {
-      this.pokemon.imagen = data.sprites.front_default;
-      console.log(data);
+      this.pokemon.image = data.sprites.front_default;
+      this.pokemon.abilities = data.abilities;
+      console.log(this.pokemon);
     });   
   }
 
 }
+function log(toString: any) {
+  throw new Error('Function not implemented.');
+}
+
