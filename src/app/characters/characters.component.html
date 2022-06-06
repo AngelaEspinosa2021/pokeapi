@@ -12,11 +12,12 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th><img [src] ="pokemon.image" alt=""></th>
+                        <th colspan="2"><img [src] ="pokemon.image" alt=""></th>
                 </thead>
                 <tbody>
                     <tr *ngFor="let item of pokemon.abilities">
-                        <th>ability: {{item.ability.name}}</th>
+                        <th class="fondo">Ability</th>
+                        <th class="thAbility">{{item.ability.name}}</th>
                     </tr>                                      
                 </tbody>
             </table>
